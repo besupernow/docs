@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Galactic Studio Docs",
+  "name": "besupernow Tools and Assets Docs",
   "colors": {
     "primary": "#0c3c6f",
     "light": "#759fb4",
@@ -48,21 +48,19 @@
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Seed Subsystem",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Guides",
             "pages": [
-              "api-reference/introduction"
+              "seed-subsystem/introduction",
+              "seed-subsystem/getting-started"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "API Reference",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              
             ]
           }
         ]
