@@ -1,6 +1,6 @@
 ---
-title: 'Get Started'
-description: 'Install, enable, and initialize the Seed Subsystem. Quick examples in C++ and Blueprint.'
+title: "Get Started"
+description: "Install, enable, and initialize the Seed Subsystem. Quick examples in C++ and Blueprint."
 ---
 
 # Get Started
@@ -14,7 +14,15 @@ description: 'Install, enable, and initialize the Seed Subsystem. Quick examples
 
 Initialize once at startup (e.g., in your `UGameInstance` or BP GameInstance or anywhere else).
 
-<iframe src="https://blueprintue.com/render/76h_spyp/" scrolling="no" allowfullscreen width="100%" height="400px" />
+<Tip>
+  **Tip:** For multiplayer, set and replicate the seed from the server and derive all randomness server-side. Replicate outcomes as needed.
+</Tip>
+
+### Blueprint example
+
+In your GameInstance Blueprint you can <Tooltip tip="Set game seed Initializes the random stream with a given seed and enables the seed subsystem.">Set Game Seed</Tooltip> on Init or at any other point in the game's lifecycle.
+
+<iframe src="https://blueprintue.com/render/tgmjk89_/" scrolling="no" allowfullscreen width="100%" height="400px" />
 
 ### C++ example
 
@@ -34,3 +42,16 @@ void UMyGameInstance::Init()
     }
 }
 ```
+
+## Using Salts
+
+Use a short, memorable salt per call:
+
+- `"Loot_T1"`, `"AI_Crit"`, `"Spawner_A"`, `"NameGen"`
+
+This keeps streams independent while remaining deterministic.
+
+## Editor Seed
+
+- **CVAR:** `SeedSubsystem.EditorSeed` (default `12345678`)
+- In editor builds, `SetGameSeed` uses the editor seed so you get identical results run-to-run.

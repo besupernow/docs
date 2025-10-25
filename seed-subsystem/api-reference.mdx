@@ -1,0 +1,88 @@
+---
+title: "API Reference"
+description: "Full Blueprint-exposed API of USeedSubsystem."
+---
+
+# API Reference – USeedSubsystem
+
+All functions are **BlueprintCallable** unless marked **BlueprintPure**.
+
+## Seed management
+
+### `void SetGameSeed(int32 InSeed)`
+
+Initializes the random stream with a given seed.
+
+### `int32 GenerateRandomSeed()`
+
+Generates and stores a new seed then returns it.
+
+### `int32 GetGameSeed()` - _BlueprintPure_
+
+Returns the current seed.
+
+## Random values (ints)
+
+### `int32 GetRandomIntInRange(int32 Min = 0, int32 Max = 100, FString Salt = "", bool bDeterministic = true)`
+
+Returns a random integer in the specified range using the current seed and optional salt.
+
+### `int32 GetRandomIntFromCurve(UCurveFloat* Curve, FString Salt = "", bool bDeterministic = true)`
+
+Returns a random value sampled from the given float curve.
+
+### `int32 GetRandomInt(FString Salt = "", bool bDeterministic = true)`
+
+Unbounded-ish integer (uses half-limits internally for safety).
+
+## Random values (floats)
+
+### `float GetRandomFloatInRange(float Min = 0.f, float Max = 1.f, FString Salt = "", bool bDeterministic = true)`
+
+Returns a random float in the specified range using the current seed and optional salt.
+
+### `float GetRandomFloatFromCurve(UCurveFloat* Curve, FString Salt = "", bool bDeterministic = true)`
+
+Returns a random value sampled from the given float curve.
+
+### `float GetRandomFloat(FString Salt = "", bool bDeterministic = true)`
+
+Returns a random float between 0 and 1 using the current seed and optional salt.
+
+## Strings
+
+### `FString GetRandomString(int32 Length = 16, FString Salt = "", bool bDeterministic = true)`
+
+Generates a random string of the specified length using the current seed and salt.
+
+## Enums
+
+### `uint8 GetRandomEnum(uint8 MaxEnumVal = 1, FString Salt = "", bool bDeterministic = true)`
+
+Returns a random enum value in the range `[0, MaxEnumVal]`.
+
+<Tip>
+  **Tip:** Pass the **<u>last enum entry</u>**, _not_ the count.
+</Tip>
+
+### `uint8 GetRandomEnumArray(const TArray<uint8>& EnumArray, FString Salt = "", bool bDeterministic = true)`
+
+Returns a random value from the provided enum array.
+
+### `uint8 GetRandomEnumWeighted(const TMap<uint8, float>& Weights, FString Salt = "", bool bDeterministic = true)`
+
+Returns a random enum value based on provided weights.
+
+## Streams
+
+### `FRandomStream GetRandomSeedStream(FString Salt = "", bool bDeterministic = true)` - _BlueprintPure_
+
+Returns a random stream initialized with the current seed and salt.
+
+### `FRandomStream GetSeedStream()` - _BlueprintPure_
+
+Returns the current random stream.
+
+## Console Variables
+
+`SeedSubsystem.EditorSeed` - editor override for stable iteration.
