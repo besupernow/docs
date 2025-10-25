@@ -54,7 +54,8 @@
             "group": "Guides",
             "pages": [
               "seed-subsystem/introduction",
-              "seed-subsystem/getting-started"
+              "seed-subsystem/getting-started",
+              "seed-subsystem/changelog"
             ]
           },
           {

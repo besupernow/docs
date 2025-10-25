@@ -1,5 +1,36 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: Get Started
+description: Install, enable, and initialize the Seed Subsystem. Quick examples in C++ and Blueprint.
 ---
 
+# Get Started
+
+## Install
+
+1. Add the plugin to your project’s `Plugins/` folder or install via Fab.
+2. In **Edit → Plugins**, enable **Deterministic Seed Subsystem** and restart the editor.
+
+## Initialize the Seed
+
+Initialize once at startup (e.g., in your `UGameInstance` or BP GameInstance or anywhere else).
+
+<iframe src="https://blueprintue.com/render/76h_spyp/" scrolling="no" allowfullscreen width="100%" height="400px" />
+
+### C++ example
+
+```cpp
+#include "SeedSubsystem.h"
+
+void UMyGameInstance::Init()
+{
+    Super::Init();
+    if (auto* SeedSys = GetSubsystem<USeedSubsystem>())
+    {
+        // Deterministic run:
+        SeedSys->SetGameSeed(20251022);
+
+        // Or create a new seed each session:
+        // SeedSys->GenerateRandomSeed();
+    }
+}
+```
