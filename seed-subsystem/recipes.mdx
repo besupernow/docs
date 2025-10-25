@@ -1,5 +1,35 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Recipes"
+description: "Copy-paste examples for common tasks—loot rolls, curve sampling, strings, and enum utilities."
 ---
 
+# Recipes
+
+## Loot roll (weighted)
+
+### Blueprint Example:
+
+<iframe src="https://blueprintue.com/render/t_w52ybb/" scrolling="no" allowfullscreen width="100%" height="400px" />
+
+### C++ Example:
+
+```cpp
+TMap<uint8, float> Weights;
+Weights.Add(0, 60.f); // Common
+Weights.Add(1, 30.f); // Rare
+Weights.Add(2, 10.f); // Epic
+
+auto* SeedSys = GetSubsystem<USeedSubsystem>();
+uint8 Pick = SeedSys->GetRandomEnumWeighted(Weights, "Loot_Roll1", true);
+```
+
+## Curve Sampling
+
+### Blueprint Example
+
+### C++ Example
+
+```cpp
+float Value = SeedSys->GetRandomFloatFromCurve(LootDistributionCurve, "Loot_Tier1", true);
+int32 IntValue = SeedSys->GetRandomIntFromCurve(LootDistributionCurve, "Loot_Tier1", true);
+```
