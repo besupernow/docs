@@ -69,12 +69,12 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
+          "anchor": "Fab Marketplace",
           "href": "https://mintlify.com/docs",
           "icon": "book-open-cover"
         },
         {
-          "anchor": "Blog",
+          "anchor": "Discord Support",
           "href": "https://mintlify.com/blog",
           "icon": "newspaper"
         }
