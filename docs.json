@@ -79,6 +79,11 @@
           "anchor": "Discord Support",
           "href": "https://mintlify.com/blog",
           "icon": "heart-plus"
+        },
+        {
+          "anchor": "Portfolio",
+          "href": "https://besupernow.framer.website/",
+          "icon": "proportions"
         }
       ]
     }
