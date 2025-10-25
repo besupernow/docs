@@ -72,13 +72,13 @@
       "anchors": [
         {
           "anchor": "Fab Marketplace",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "href": "https://www.fab.com/listings/8d8a9c71-6cb1-44f3-865e-54b51a81ada4",
+          "icon": "store"
         },
         {
           "anchor": "Discord Support",
           "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "icon": "heart-plus"
         }
       ]
     }
