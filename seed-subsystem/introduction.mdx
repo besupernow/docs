@@ -1,5 +1,22 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Introduction"
+description: "Deterministic, seed-driven randomization for Unreal Engine 5. Blueprint-ready utilities for ints/floats/strings, curves, enums, and weighted picks—implemented as a GameInstanceSubsystem."
 ---
 
+# Seed Subsystem (UE5)
+
+**Seed Subsystem** provides reproducible randomness via a project-wide seed plus per-call salts. It’s perfect for **procedural generation**, **loot tables**, **AI gates**, and **QA repro**.
+
+## Highlights
+
+- Deterministic by design (global seed + per-call **salt**)
+- Fully **Blueprint-accessible** (C++ under the hood)
+- **Weighted enum** selection & **constrained lists**
+- **Curve** sampling (designer-friendly distributions)
+- Editor seed CVAR for stable iteration: `SeedSubsystem.EditorSeed`
+
+## Who is this for?
+
+- UE devs needing **replayable** procgen
+- Teams wanting **consistent** bug repro
+- Server-auth gameplay that requires synced RNG
