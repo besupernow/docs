@@ -92,9 +92,6 @@
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
-  "icons":{
-    "library":"lucide"
-  },
   "navbar": {
     "links": [
       {
