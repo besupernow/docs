@@ -88,6 +88,9 @@
       ]
     }
   },
+  "background":{
+    "decoration":"windows"
+  },
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
